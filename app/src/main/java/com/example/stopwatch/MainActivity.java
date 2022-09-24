@@ -2,6 +2,7 @@ package com.example.stopwatch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -27,12 +28,44 @@ public class MainActivity extends AppCompatActivity {
         stop = findViewById(R.id.stop);
         startTimer();
 
-//        start.setOnLongClickListener(new View.OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View view) {
-//                Toast toast = Toast.makeText(applicationContext, text, duration);
-//            }
-//        });
+       start.setOnLongClickListener(new View.OnLongClickListener() {
+           @Override
+           public boolean onLongClick(View view) {
+               Context context = getApplicationContext();
+               CharSequence text = "Start";
+               int duration = Toast.LENGTH_SHORT;
+
+               Toast toast = Toast.makeText(context, text, duration);
+               toast.show();
+               return false;
+           }
+       });
+
+       reset.setOnLongClickListener(new View.OnLongClickListener() {
+           @Override
+           public boolean onLongClick(View view) {
+               Context context = getApplicationContext();
+               CharSequence text = "Reset";
+               int duration = Toast.LENGTH_SHORT;
+
+               Toast toast = Toast.makeText(context, text, duration);
+               toast.show();
+               return false;
+           }
+       });
+
+       stop.setOnLongClickListener(new View.OnLongClickListener() {
+           @Override
+           public boolean onLongClick(View view) {
+               Context context = getApplicationContext();
+               CharSequence text = "Stop";
+               int duration = Toast.LENGTH_SHORT;
+
+               Toast toast = Toast.makeText(context, text, duration);
+               toast.show();
+               return false;
+           }
+       });
 
     }
 
